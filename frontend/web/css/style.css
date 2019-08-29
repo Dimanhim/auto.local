@@ -1,0 +1,87 @@
+@font-face {
+   font-family: open-sans;
+   src: url(../fonts/open-sans.ttf);
+}
+
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	font-family: open-sans, 'Open Sans', sans-serif;
+	color: #333;
+	background: #eee;
+}
+
+.test {
+	
+}
+
+#wrap {
+	position: absolute;
+	max-width: 1920px;
+	width: 100%;
+	left: 0;
+	right: 0;
+	margin: 0 auto;
+}
+.header {
+	height: 60px;
+	border-bottom: 1px solid #ddd;
+	margin-bottom: 20px
+}
+.logout {
+	margin-top: 20px;
+}
+footer {
+	height: 60px;
+}
+
+.car.table > tbody > tr > td, 
+.car.table > tbody > tr > th, 
+.car.table > tfoot > tr > td, 
+.car.table > tfoot > tr > th, 
+.car.table > thead > tr > td, 
+.car.table > thead > tr > th {
+    vertical-align: middle;
+}
+.car.table tr {
+	cursor: pointer;
+}
+.message {
+	height: 40px;
+	color: #008000;
+}
+.message p {
+	display: none;
+}
+/*.big-item {
+	width: 720px;
+	height: 540px;
+	background: #fff
+}*/
+/*.big-item img {
+	width: 100%;
+	background: #fff
+}*/
+.slick-slide {
+    text-align: center;
+    background: #fff !important;
+}
+.slick-slide img {
+	width: auto !important;
+}
+.slick-track {
+    background: #fff !important;
+}
+.information {
+	margin-top: 80px;
+}
+.information table tr td {
+	border: none;
+}
+.form {
+	
+}

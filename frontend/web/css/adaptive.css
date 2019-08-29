@@ -1,0 +1,51 @@
+				/* ADAPTIVE */
+
+/*   1199px  */
+
+@media screen and (max-width: 1199px),
+only screen and (max-device-width:1199px) {
+
+}
+
+/*   991px  */
+
+@media screen and (max-width: 991px),
+only screen and (max-device-width:991px) {
+
+}
+
+/*   767px  */
+
+@media screen and (max-width: 767px),
+only screen and (max-device-width:767px) {
+
+}
+
+/*   672px  */
+
+@media screen and (max-width: 672px),
+only screen and (max-device-width:672px) {
+	
+}
+
+/*   570px  */
+
+@media screen and (max-width: 570px),
+only screen and (max-device-width:570px) {
+
+}
+
+
+/*   400px  */
+
+@media screen and (max-width: 400px),
+only screen and (max-device-width:400px) {
+
+}
+
+/*   320px  */
+
+@media screen and (max-width: 320px),
+only screen and (max-device-width:320px) {
+
+}

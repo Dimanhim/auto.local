@@ -23,7 +23,7 @@ $(document).ready(function() {
 	$('.cars').change(function() {
 		var car = $(this).val();
 		//alert(car);
-		var url = 'http://auto.local/frontend/web/index.php?r=addModel';
+		var url = '/frontend/web/addModel';
 		$.get(url, {
 			car: car,
 		}, function(data) {

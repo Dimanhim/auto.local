@@ -12,12 +12,12 @@ $this->title = $name;
             <div class="big-item">
                 <div class="slider-for">
                 <?php foreach($images_max as $v) { ?>
-                  <img src="images/large/<?= $v->name ?>" alt="">
+                  <img src="<?= Yii::$app->request->baseUrl ?>/images/large/<?= $v->name ?>" alt="">
                 <?php } ?>
                 </div>
                 <div class="slider-nav">
                 <?php foreach($images_min as $k) { ?>
-                  <img src="images/small/<?= $k->name ?>" alt="">
+                  <img src="<?= Yii::$app->request->baseUrl ?>/images/small/<?= $k->name ?>" alt="">
                 <?php } ?>
                 </div>
             </div>

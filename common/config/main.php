@@ -6,6 +6,9 @@ return [
     ],
     'vendorPath' => dirname(dirname(__DIR__)) . '/vendor',
     'components' => [
+        'ih'=> [
+            'class'=>'CImageHandler',
+        ],
         'cache' => [
             'class' => 'yii\caching\FileCache',
         ],

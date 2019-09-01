@@ -1,14 +1,15 @@
 <?php
 
-/* @var $this yii\web\View */
-
+use frontend\components\Functions;
+use frontend\models\Images;
+use yii\widgets\LinkPager;
+$functions = new Functions;
 $this->title = 'Объявления';
 ?>
-<?php //print_r(Yii::$app) ?>
 <div class="container">
     <h1>Объявления</h1>
     <div class="message">
-        <p class="message">Объявление успешно удалено</p>
+        <p class="message"><?= $message ?></p>
     </div>
     <table class="car table">
         <tr>
@@ -18,57 +19,26 @@ $this->title = 'Объявления';
             <td>Цена</td>
             <td>Действия</td>
         </tr>
+    <?php foreach($ads as $ad) { ?>
         <tr>
             <td>
-                <a href="<?= Yii::$app->urlManager->createUrl(['site/model', 'id' => 25]) ?>">Опель</a>
+                <a href="<?= Yii::$app->urlManager->createUrl(['site/model', 'id' => $ad->id]) ?>"><?= $functions->getCarName($ad->id) ?></a>
             </td>
             <td>
-                <a href="<?= Yii::$app->urlManager->createUrl(['site/model', 'id' => 25]) ?>">Insignia</a>
+                <a href="<?= Yii::$app->urlManager->createUrl(['site/model', 'id' => $ad->id]) ?>"><?= $functions->getModelName($ad->id) ?></a>
             </td>
             <td>
-                <a href="<?= Yii::$app->urlManager->createUrl(['site/model', 'id' => 25]) ?>">
-                    <img src="<?= Yii::$app->request->baseUrl ?>/images/car-1-1-small.jpg" >
+                <a href="<?= Yii::$app->urlManager->createUrl(['site/model', 'id' => $ad->id]) ?>">
+                    <img class="image" src="<?= Yii::$app->request->baseUrl ?>/images/small/<?= $functions->getImage($ad->id) ?>" >
                 </a>
             </td>
-            <td>1 500 000</td>
+            <td><?= $ad->price ?></td>
             <td>
-                <a href="<?= Yii::$app->urlManager->createUrl(['site/model', 'id' => 25]) ?>" class="delete">Удалить</a>
+                <a href="<?= Yii::$app->urlManager->createUrl(['site/index', 'id' => $ad->id, 'action' => 'delete']) ?>" class="delete">Удалить</a>
             </td>
         </tr>
-        <tr>
-            <td>
-                <a href="<?= Yii::$app->urlManager->createUrl(['site/model', 'id' => 25]) ?>">BMW</a>
-            </td>
-            <td>
-                <a href="<?= Yii::$app->urlManager->createUrl(['site/model', 'id' => 25]) ?>">X6</a>
-            </td>
-            <td>
-                <a href="<?= Yii::$app->urlManager->createUrl(['site/model', 'id' => 25]) ?>">
-                    <img src="<?= Yii::$app->request->baseUrl ?>/images/car-1-2-small.jpg" >
-                </a>
-            </td>
-            <td>3 500 000</td>
-            <td>
-                <a href="<?= Yii::$app->urlManager->createUrl(['site/model', 'id' => 25]) ?>" class="delete">Удалить</a>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <a href="<?= Yii::$app->urlManager->createUrl(['site/model', 'id' => 25]) ?>">Mitsubishi</a>
-            </td>
-            <td>
-                <a href="<?= Yii::$app->urlManager->createUrl(['site/model', 'id' => 25]) ?>">Pagero</a>
-            </td>
-            <td>
-                <a href="<?= Yii::$app->urlManager->createUrl(['site/model', 'id' => 25]) ?>">
-                    <img src="<?= Yii::$app->request->baseUrl ?>/images/car-1-2-small.jpg" >
-                </a>
-            </td>
-            <td>2 500 000</td>
-            <td>
-                <a href="<?= Yii::$app->urlManager->createUrl(['site/model', 'action' => 'delete', 'id' => 25]) ?>" class="delete">Удалить</a>
-            </td>
-        </tr>
+    <?php } ?>
     </table>
-    <a href="<?= Yii::$app->urlManager->createUrl(['addModel']) ?>" class="btn btn-primary">Добавить объявление</a>
+    <?= LinkPager::widget(['pagination' => $pagination])  ?>
+    <a href="<?= Yii::$app->urlManager->createUrl(['addModel']) ?>" class="btn btn-primary">Добавить автомобиль</a>
 </div>

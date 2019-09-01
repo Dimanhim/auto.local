@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "40948f88acd104ed586c828423aedbba",
+    "content-hash": "0a25c0a2c3ef8cb5cc8d63539a5ec74a",
     "packages": [
         {
             "name": "bower-asset/bootstrap",
@@ -331,6 +331,52 @@
                 "html"
             ],
             "time": "2019-07-14T18:58:38+00:00"
+        },
+        {
+            "name": "keygenqt/yii2-image-handler",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/keygenqt/yii2-image-handler.git",
+                "reference": "c003fc0acba4a309b0ca2c87f3aa2cd51aacb391"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/keygenqt/yii2-image-handler/zipball/c003fc0acba4a309b0ca2c87f3aa2cd51aacb391",
+                "reference": "c003fc0acba4a309b0ca2c87f3aa2cd51aacb391",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.4.0",
+                "yiisoft/yii2": "*"
+            },
+            "type": "yii2-extension",
+            "autoload": {
+                "psr-4": {
+                    "keygenqt\\components\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Vitaliy Zarubin",
+                    "role": "Developer",
+                    "email": "keygenqt@gmail.com",
+                    "homepage": "http://keygenqt.ru/"
+                }
+            ],
+            "description": "yii2 image-handler",
+            "homepage": "https://github.com/keygenqt/yii2-image-handler",
+            "keywords": [
+                "extension",
+                "image-handler",
+                "keygenqt",
+                "yii2"
+            ],
+            "time": "2017-06-28T06:17:38+00:00"
         },
         {
             "name": "swiftmailer/swiftmailer",
@@ -3809,7 +3855,9 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": [],
+    "stability-flags": {
+        "keygenqt/yii2-image-handler": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {

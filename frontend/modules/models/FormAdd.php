@@ -15,12 +15,19 @@ class FormAdd extends Model
     public $equipment;
     public $price;
     public $phone;
+    public $list;
+    public $file;
+    public $file1;
+    public $file2;
+    public $file3;
 
     public function rules()
     {
         return [
-            [['mileage', 'price'], 'number'],
-            [['car', 'model', 'equipment', 'phone'], 'string']
+            [['mileage', 'price', 'list'], 'number'],
+            [['car', 'model', 'phone', 'equipment'], 'string'],
+            [['file'], 'file', 'extensions' => 'png, jpg'],
+            [['car', 'model', 'price', 'phone'], 'required']
         ];
     }
     

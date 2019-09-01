@@ -1,49 +1,61 @@
 <?php
-
-/* @var $this yii\web\View */
-
-$this->title = 'Mitsubishi Pagero';
+use frontend\components\Functions;
+use frontend\models\Images;
+$functions = new Functions();
+$name = $functions->getCarName($ad->id).' '.$functions->getModelName($ad->id);
+$this->title = $name;
 ?>
-<?php //print_r(Yii::$app) ?>
 <div class="container">
-    <h1>Автомобиль - Mitsubishi Pagero</h1>
-
+    <h1>Автомобиль - <?= $name ?></h1>
     <div class="row">
         <div class="col-md-6">
             <div class="big-item">
                 <div class="slider-for">
-                  <img src="images/1.jpg" alt="">
-                  <img src="images/2.jpg" alt="">
-                  <img src="images/car-1-big.jpg" alt="">
-                  <img src="images/car-2-big.jpg" alt="">
+                <?php foreach($images_max as $v) { ?>
+                  <img src="images/large/<?= $v->name ?>" alt="">
+                <?php } ?>
                 </div>
                 <div class="slider-nav">
-                  <img src="images/car-1-1-small.jpg" alt="">
-                  <img src="images/car-2-1-small.jpg" alt="">
-                  <img src="images/car-1-1-small.jpg" alt="">
-                  <img src="images/car-2-1-small.jpg" alt="">
-                  <img src="images/car-1-1-small.jpg" alt="">
-                  <img src="images/car-2-1-small.jpg" alt="">
-                  <img src="images/car-1-1-small.jpg" alt="">
-                  <img src="images/car-2-1-small.jpg" alt="">
-                </div>  
+                <?php foreach($images_min as $k) { ?>
+                  <img src="images/small/<?= $k->name ?>" alt="">
+                <?php } ?>
+                </div>
             </div>
-            
         </div>
         <div class="col-md-6">
             <div class="information">
                 <table class="table">
                     <tr>
                         <td>Марка</td>
-                        <td>Mitsubishi</td>
+                        <td><?= $functions->getCarName($ad->id) ?></td>
                     </tr>
                     <tr>
                         <td>Модель</td>
-                        <td>Pagero</td>
+                        <td><?= $functions->getModelName($ad->id) ?></td>
                     </tr>
                     <tr>
                         <td>Цена</td>
-                        <td>1 500 000</td>
+                    <?php if($ad->price) { ?>
+                        <td><?= $ad->price ?> руб.</td>
+                    <?php } ?>
+                    </tr>
+                    <tr>
+                        <td>Пробег</td>
+                        <td><?= $ad->mileage ?> км.</td>
+                    </tr>
+                    <tr>
+                        <td>Комплектация</td>
+                        <td>
+                          <ul>
+                          <?php foreach($functions->getEq($ad->equipment) as $eq) { ?>
+                            <li><?= $eq->equipment ?></li>
+                          <?php } ?>
+                          </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Телефон</td>
+                        <td><a href="tel:<?= $ad->phone ?>"><?= $ad->phone ?></a></td>
                     </tr>
                 </table>
             </div>

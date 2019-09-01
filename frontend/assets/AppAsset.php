@@ -24,6 +24,8 @@ class AppAsset extends AssetBundle
         'js/slick.min.js',
         'js/inputmask.js',
         'js/jquery.inputmask.js',
+        'js/jquery-ui.min.js',
+        'js/jquery-ui-1.8.21.custom.min.js',
         'js/common.js',
     ];
     public $depends = [

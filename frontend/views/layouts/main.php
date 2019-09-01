@@ -38,6 +38,7 @@ AppAsset::register($this);
       <footer></footer>   
    </div>
 <?php $this->endBody() ?>
+<?php require_once "ajax.php" ?>
 </body>
 </html>
 <?php $this->endPage() ?>
